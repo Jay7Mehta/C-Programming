@@ -1,0 +1,71 @@
+ GOOD PROGRAMMING PRACTICES: 
+
+ #1: USE #define. 
+
+ #2: AVOID HARD CODING. Use MACROS. 
+
+ #3: GIVE GOOD NAMES TO YOUR VARIABLES.
+
+ #4: GIVE PROPER DESCRIPTIVE COMMENTS TO MAKE CODE READABLE.
+
+ #5: NEVER IGNORE ANY WARNINGS.
+
+ #6: LINT YOUR PROGRAMS TO CHECK FOR HIDDEN WARNINGS IF ANY.
+
+ #7: MAKE NEW FOLDERS FOR EACH CODE/PROJECT THAT YOU CREATE. GIVE PROPER NAMES TO THE FOLDERS
+
+ #8: USE VERSION CONTROL TOOL TO KEEP A CHECK ON YOUR CHANGES IN A CODE. git IS ONE OF THOSE VCT.
+
+ #9: USE makefile TO COMPILE YOUR CODES. ADD NECESSARY FLAGS TO MAKE A debugging version (release) AND A prototype(product) version(release).
+            LIKE: 
+            You can make a make file by having its name as makefile, Makefile or make -f filename
+            You can call the below MACROS (CC and CFLAGS) by first assigning them with their desired inputs after the equal to sign. You can use them inside a attribute call by writing $(MACRONAME) or ${MACRONAME}.
+            CC- cross compiler; 
+            CFLAGS - extensions for coverage, profiling, optimization, linting, linking etc.
+            Wall-warning all
+            cpp-preprocessor
+            -D-to explicitly define things
+            cppcheck- to check memory leaks in our program.
+            -O2-optimization to the code is done by reducing the number of bytes and the size of the file.
+            -ggdb-if the debugger is specifically gdb.
+            -pg-shows you the functions that take maximum amount of time to execute. (It gives the timing details of all the functions in your code.)
+            gcov - coverage tools accessed with the help flags -ftest-coverage and -fprofile-arcs: it shows what percentage of code was covered with the arguments or test case that you checked.
+            strace -  gives you the information related to system calls and main functioning of the code. Provides you with error numbers by which you can check the description of that particular error. 
+            ltrace - gives you the information related to library calls used in your code.
+            ggdb - our normal the good old friend gdb ... GNU Debugger. 
+
+ #10: DO AS MANY git commits AS POSSIBLE. HELPS YOU KEEP A BETTER TRACK OF YOUR CHANGES. 
+
+ #11: KEEP YOUR git commits AS DESCRIPTIVE AS POSSIBLE. THIS WILL HELP YOU IN LONG RUN WHEN YOU REVISIT THE FILES.
+
+ #12: USE #ifdef IN CODES THAT YOU ARE SURE THEM TO BE configurable FOR INSTANCE: I2C,SPI, UART ... etc.
+
+ #13: MAKE MULTIPLE C FILES. Modular Coding Practice is always recommended.
+
+ #14: ALWAYS INITIALIZE YOUR VARIABLES. OFTEN IT IS NULL OR 0.
+
+ #15: ONLY HAVE THE DESCRIPTIONS OF THOSE header files THAT ARE SUPPOSED TO BE EXPOSED TO THE OUTER WORLD. ALL OTHER FUNCTIONS SHOULD BE OF TYPE static. ALWAYS HAVE configurable functions IN header files.
+
+ #16: ALWAYS free THE MEMORY WHICH WAS allocated BY malloc/calloc.
+
+ #17: ALWAYS return SOMETHING FROM THE main() FUNCTION, NEVER KEEP IT VOID.
+
+ #18: ALWAYS HANDLE THE return data types OF THE FUNCTIONS THAT YOU ARE USING. AS, OTHERWISE YOU GET A WARNING IF THE OPTIMIZATION IS ON WHILE COMPILING.
+
+ #19: NEVER PUT DEBUG INFORMATION INTO product release. As, debugging adds a lot of information in the source file, making the size larger.
+
+ #20: Always clear the buffer before writing anything to it, and clear it once you have successfully written things to the destination. This avoids garbage values to intrude into your files.
+
+ #21: Use command line arguments whenever testing a piece of code by making a text file of valid inputs and a different text file of an invalid inputs. You can import this text file into your main(arguments) using the command ./executable (your filename instead of executable) and then a space followed by < (less than sign indicating an arrow showing that you want to transmit data from text file to your main(arguments)) then a space and name of the text file.
+
+ #22: Use output.txt file to transport the output that your code displays on the screen.  You can do this using the command ./executable (your filename instead of executable) and then a space followed by > (greater than sign indicating an arrow showing that you want to transmit data from your code file to your text file) then a space and name of the text file.
+
+ #23: Never write code in header files. Just have function prototypes aka declarations. 
+
+ #24: KNOW YOUR DATA TYPES AND THEIR SIZES WELL. 
+                            int8_t : - allocates only 8 bits of memory in all architectures ... 8, 16, 32, 64 etc. You can use this by including the library stdint.h
+
+ #25: MAKE YOUR CODES READABLE, BY HAVING COMMENTS AND ...
+                            return EXIT_SUCCESS or EXIT_FAILURE : instead of using 0 or 1 ... you can write such things by including proper libraries in this case stdlib.h  
+
+ #26: KEEP FUNCTIONS AS SMALL AS POSSIBLE. ESPECIALLY INTERRUPTS IF ANY. Because in multiprocessing or during higher priority calls you don't want the main function to be kept waiting for longer period of time. 
